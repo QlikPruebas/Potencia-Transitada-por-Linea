@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "wcHLyDA",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "=tramo_nombre\r\n\n\n"
+    ],
+    "qFieldLabels": [
+      "Tramo"
+    ],
+    "qLabelExpression": "='Tramo'",
+    "title": "Tramo",
+    "coloring": {
+      "changeHash": "0.7316998663837246",
+      "colorMapRef": "wcHLyDA"
+    }
+  },
+  "qMetaDef": {
+    "title": "Tramo",
+    "description": "",
+    "tags": []
+  }
+}

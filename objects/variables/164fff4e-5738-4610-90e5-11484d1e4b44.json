@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "164fff4e-5738-4610-90e5-11484d1e4b44",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vUltimaFecha",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "{<Month= {\">=$(=date(Max(Month),'YYYY-MM-DD'))\"},fecha_hora>}",
+  "tags": []
+}

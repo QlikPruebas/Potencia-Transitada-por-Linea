@@ -1,0 +1,14 @@
+{
+  "qInfo": {
+    "qId": "0d203856-6698-45ec-bfe6-f1441a55134b",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vFin",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "45244"
+}

@@ -1,0 +1,14 @@
+{
+  "qInfo": {
+    "qId": "d2528f05-6024-403c-af4c-49eedecf4e6d",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vNumFechasCarga",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "4"
+}

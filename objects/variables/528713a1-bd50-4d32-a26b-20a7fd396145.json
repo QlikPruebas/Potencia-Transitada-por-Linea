@@ -1,0 +1,14 @@
+{
+  "qInfo": {
+    "qId": "528713a1-bd50-4d32-a26b-20a7fd396145",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "matches",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "0"
+}

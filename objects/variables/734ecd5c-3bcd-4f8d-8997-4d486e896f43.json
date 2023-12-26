@@ -1,0 +1,14 @@
+{
+  "qInfo": {
+    "qId": "734ecd5c-3bcd-4f8d-8997-4d486e896f43",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vIni",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "45139"
+}

@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "09305473-0271-4234-989e-de71409afc07",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vTramosSinFiltro",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "{<0>}",
+  "tags": []
+}

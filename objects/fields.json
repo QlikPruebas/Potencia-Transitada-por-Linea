@@ -1,0 +1,145 @@
+[
+  {
+    "qName": "Day",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "CalendarioMaestro"
+    ]
+  },
+  {
+    "qName": "Fecha_Hora",
+    "qTags": [
+      "$key",
+      "$numeric",
+      "$timestamp"
+    ],
+    "qSrcTables": [
+      "POTENCIA_TRANSITADA",
+      "CalendarioMaestro"
+    ]
+  },
+  {
+    "qName": "Hora",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "POTENCIA_TRANSITADA"
+    ]
+  },
+  {
+    "qName": "MesAñoNum",
+    "qTags": [
+      "$numeric",
+      "$integer",
+      "$timestamp",
+      "$date"
+    ],
+    "qSrcTables": [
+      "CalendarioMaestro"
+    ]
+  },
+  {
+    "qName": "Month",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "CalendarioMaestro"
+    ]
+  },
+  {
+    "qName": "MonthYear",
+    "qTags": [
+      "$numeric",
+      "$integer",
+      "$timestamp",
+      "$date"
+    ],
+    "qSrcTables": [
+      "CalendarioMaestro"
+    ]
+  },
+  {
+    "qName": "Week",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "CalendarioMaestro"
+    ]
+  },
+  {
+    "qName": "Year",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "CalendarioMaestro"
+    ]
+  },
+  {
+    "qName": "fecha",
+    "qTags": [
+      "$numeric",
+      "$integer",
+      "$timestamp",
+      "$date"
+    ],
+    "qSrcTables": [
+      "POTENCIA_TRANSITADA"
+    ]
+  },
+  {
+    "qName": "fecha_calendario",
+    "qTags": [
+      "$numeric",
+      "$timestamp"
+    ],
+    "qSrcTables": [
+      "CalendarioMaestro"
+    ]
+  },
+  {
+    "qName": "intervalos",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "POTENCIA_TRANSITADA"
+    ]
+  },
+  {
+    "qName": "intervalos_final",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "POTENCIA_TRANSITADA"
+    ]
+  },
+  {
+    "qName": "potencia_sum",
+    "qTags": [],
+    "qSrcTables": [
+      "POTENCIA_TRANSITADA"
+    ]
+  },
+  {
+    "qName": "tramo_nombre",
+    "qTags": [
+      "$text"
+    ],
+    "qSrcTables": [
+      "POTENCIA_TRANSITADA"
+    ]
+  }
+]

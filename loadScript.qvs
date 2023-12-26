@@ -1,0 +1,103 @@
+///$tab Main
+SET ThousandSep='.';
+SET DecimalSep=',';
+SET MoneyThousandSep='.';
+SET MoneyDecimalSep=',';
+SET MoneyFormat='$#.##0;$-#.##0';
+SET TimeFormat='hh:mm:ss';
+SET DateFormat='DD-MM-YYYY';
+SET TimestampFormat='DD-MM-YYYY hh:mm:ss[.fff]';
+SET FirstWeekDay=0;
+SET BrokenWeeks=1;
+SET ReferenceDay=0;
+SET FirstMonthOfYear=1;
+SET CollationLocale='es-CL';
+SET CreateSearchIndexOnReload=1;
+SET MonthNames='Ene;Feb;Mar;Abr;May;Jun;Jul;Ago;Sep;Oct;nov;Dic';
+SET LongMonthNames='enero;febrero;marzo;abril;mayo;junio;julio;agosto;septiembre;octubre;noviembre;diciembre';
+SET DayNames='lun.;mar.;mié.;jue.;vie.;sáb.;dom.';
+SET LongDayNames='lunes;martes;miércoles;jueves;viernes;sábado;domingo';
+SET NumericalAbbreviation='3:k;6:M;9:G;12:T;15:P;18:E;21:Z;24:Y;-3:m;-6:μ;-9:n;-12:p;-15:f;-18:a;-21:z;-24:y';
+///$tab POTENCIA_TRANSITADA
+POTENCIA_TRANSITADA_TMP_1:
+
+LOAD
+    intervalos + 1 									as intervalos_final,
+    tramo_nombre,
+    fecha,
+    intervalos,
+  // time(time#(intervalos, 'hhmm')) as Hora,
+    num#(potencia_sum) as potencia_sum
+FROM [lib://Dropbox/Archivos Qlik/Potencia Transitada en Linea.4.tsv]
+(txt, utf8, embedded labels, delimiter is '\t', msq);
+
+
+POTENCIA_TRANSITADA_TMP:  
+LOAD
+
+  if(intervalos_final = 24,
+    MAKETIME(23,59,59),
+    MAKETIME(intervalos_final,0,0)) 				as Hora,
+*
+
+Resident POTENCIA_TRANSITADA_TMP_1;
+
+drop table POTENCIA_TRANSITADA_TMP_1;
+
+
+POTENCIA_TRANSITADA:
+
+LOAD 
+DATE(fecha+Hora, 'DD/MM/YYYY hh:mm:ss')      as Fecha_Hora,
+*
+
+Resident POTENCIA_TRANSITADA_TMP;
+
+drop table POTENCIA_TRANSITADA_TMP;
+
+//drop field fecha;
+
+
+
+///$tab Calendario
+
+
+// ----------CALENDARIO MAESTRO DE LA APP---------------
+Temp:
+Load
+min(Fecha_Hora) as minDate,
+max(Fecha_Hora) as maxDate
+Resident POTENCIA_TRANSITADA;
+
+Let varMinDate = Num(Peek('minDate', 0, 'Temp'));
+Let varMaxDate = Num(Peek('maxDate', 0, 'Temp'));
+DROP Table Temp;
+
+TempCalendar:
+LOAD
+'$(varMinDate)'+ Iterno()-1 As Num,
+Date('$(varMinDate)' + IterNo() - 1) as TempDate
+AutoGenerate 1
+While '$(varMinDate)' + IterNo() -1 <= '$(varMaxDate)';
+
+CalendarioMaestro:
+Load
+TempDate AS Fecha_Hora,
+TempDate AS fecha_calendario,
+week(TempDate) As Week,
+Year(TempDate) As Year,
+Month(TempDate) As Month,
+Day(TempDate) As Day,
+NUM(DATE(MONTHSTART(   
+    Date(Floor([TempDate]),'DD-MM-YYYY')
+    					), 'MMM-YYYY'))  as MesAñoNum,
+/*YeartoDate(TempDate)*-1 as CurYTDFlag,
+YeartoDate(TempDate,-1)*-1 as LastYTDFlag,
+inyear(TempDate, Monthstart($(varMaxDate)),-1) as RC12,*/
+date(monthstart(TempDate), 'MMM-YYYY') as MonthYear
+/*Week(weekstart(TempDate)) & '-' & WeekYear(TempDate) as WeekYear,
+WeekDay(TempDate) as WeekDay*/
+Resident TempCalendar
+Order By TempDate ASC;
+
+Drop Table TempCalendar;

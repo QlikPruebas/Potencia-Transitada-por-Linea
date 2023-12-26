@@ -1,0 +1,14 @@
+{
+  "qInfo": {
+    "qId": "8f66f299-3377-4567-9757-c43119a3ed14",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vPeriodo",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "202310"
+}

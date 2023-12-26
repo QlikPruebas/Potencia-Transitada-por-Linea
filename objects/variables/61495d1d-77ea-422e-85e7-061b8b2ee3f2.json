@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "61495d1d-77ea-422e-85e7-061b8b2ee3f2",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vTramosFiltrados",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "{<tramo_nombre={'Nueva Pan de Azucar - Polpaico 500KV C1 / Polpaico 500KV',\r\n\n'Polpaico - Lo Aguirre 500 kV C1 / Lo Aguirre 500 kV',\n\n'Quillota - Polpaico 220 kV C2 / Polpaico 220 kV',\n\n'Nueva Pan de Azucar - Polpaico 500KV C2 / Polpaico 500KV',\n\n'Quillota - Polpaico 220 kV C1 / Polpaico 220 kV',\n\n'Transformador Lo Aguirre 500/200 kV / Lo Aguirre 220 KV'},fecha= {\">=$(=Max(fecha))\"}>}\n",
+  "tags": []
+}

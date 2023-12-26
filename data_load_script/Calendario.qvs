@@ -1,0 +1,42 @@
+///$tab Calendario
+
+
+// ----------CALENDARIO MAESTRO DE LA APP---------------
+Temp:
+Load
+min(Fecha_Hora) as minDate,
+max(Fecha_Hora) as maxDate
+Resident POTENCIA_TRANSITADA;
+
+Let varMinDate = Num(Peek('minDate', 0, 'Temp'));
+Let varMaxDate = Num(Peek('maxDate', 0, 'Temp'));
+DROP Table Temp;
+
+TempCalendar:
+LOAD
+'$(varMinDate)'+ Iterno()-1 As Num,
+Date('$(varMinDate)' + IterNo() - 1) as TempDate
+AutoGenerate 1
+While '$(varMinDate)' + IterNo() -1 <= '$(varMaxDate)';
+
+CalendarioMaestro:
+Load
+TempDate AS Fecha_Hora,
+TempDate AS fecha_calendario,
+week(TempDate) As Week,
+Year(TempDate) As Year,
+Month(TempDate) As Month,
+Day(TempDate) As Day,
+NUM(DATE(MONTHSTART(   
+    Date(Floor([TempDate]),'DD-MM-YYYY')
+    					), 'MMM-YYYY'))  as MesAñoNum,
+/*YeartoDate(TempDate)*-1 as CurYTDFlag,
+YeartoDate(TempDate,-1)*-1 as LastYTDFlag,
+inyear(TempDate, Monthstart($(varMaxDate)),-1) as RC12,*/
+date(monthstart(TempDate), 'MMM-YYYY') as MonthYear
+/*Week(weekstart(TempDate)) & '-' & WeekYear(TempDate) as WeekYear,
+WeekDay(TempDate) as WeekDay*/
+Resident TempCalendar
+Order By TempDate ASC;
+
+Drop Table TempCalendar;

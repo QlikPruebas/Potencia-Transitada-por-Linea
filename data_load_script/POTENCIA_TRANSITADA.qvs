@@ -1,0 +1,38 @@
+///$tab POTENCIA_TRANSITADA
+POTENCIA_TRANSITADA_TMP_1:
+
+LOAD
+    intervalos + 1 									as intervalos_final,
+    tramo_nombre,
+    fecha,
+    intervalos,
+  // time(time#(intervalos, 'hhmm')) as Hora,
+    num#(potencia_sum) as potencia_sum
+FROM [lib://Dropbox/Archivos Qlik/Potencia Transitada en Linea.4.tsv]
+(txt, utf8, embedded labels, delimiter is '\t', msq);
+
+
+POTENCIA_TRANSITADA_TMP:  
+LOAD
+
+  if(intervalos_final = 24,
+    MAKETIME(23,59,59),
+    MAKETIME(intervalos_final,0,0)) 				as Hora,
+*
+
+Resident POTENCIA_TRANSITADA_TMP_1;
+
+drop table POTENCIA_TRANSITADA_TMP_1;
+
+
+POTENCIA_TRANSITADA:
+
+LOAD 
+DATE(fecha+Hora, 'DD/MM/YYYY hh:mm:ss')      as Fecha_Hora,
+*
+
+Resident POTENCIA_TRANSITADA_TMP;
+
+drop table POTENCIA_TRANSITADA_TMP;
+
+//drop field fecha;

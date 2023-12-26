@@ -1,0 +1,14 @@
+{
+  "qInfo": {
+    "qId": "d5ec94cd-55c4-49af-9990-45899efcb7c2",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vTermino",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "2022-11-24"
+}

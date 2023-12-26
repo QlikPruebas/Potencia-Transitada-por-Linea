@@ -1,0 +1,25 @@
+{
+  "qInfo": {
+    "qId": "jSpxZU",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Potencia (mWh)",
+    "qDef": "SUM(\r\n\t$(=\n    \tIF(GetSelectedCount(tramo_nombre)=0 AND GetSelectedCount(fecha)=0,\n    \tvTramosFiltrados,vTramosSinFiltro\n    \t)\n    )\npotencia_sum) \n\n",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qLabelExpression": "='Potencia (Mw)'",
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "coloring": {}
+  },
+  "qMetaDef": {
+    "title": "Potencia (mWh)",
+    "description": "",
+    "tags": []
+  }
+}

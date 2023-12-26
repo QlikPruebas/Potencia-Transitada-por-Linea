@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "fCwJr",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "fecha"
+    ],
+    "qFieldLabels": [
+      "Fecha"
+    ],
+    "qLabelExpression": "='Fecha'",
+    "title": "Fecha",
+    "coloring": {
+      "changeHash": "0.24861979454194016",
+      "colorMapRef": "fCwJr"
+    }
+  },
+  "qMetaDef": {
+    "title": "Fecha",
+    "description": "",
+    "tags": []
+  }
+}

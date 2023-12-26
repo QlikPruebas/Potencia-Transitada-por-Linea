@@ -1,0 +1,14 @@
+{
+  "qInfo": {
+    "qId": "ce0fff71-9d5f-4773-9fef-a4bef4ae690a",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vTipoCarga",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "2"
+}
